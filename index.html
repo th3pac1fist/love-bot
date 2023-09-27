@@ -11,6 +11,11 @@
         <h1>Welcome to LoveBot</h1>
         <p>Welcome to LoveBot, where AI-powered blind dates take romance to the next level! Our unique ChatGPT technology pairs you with compatible strangers for a thrilling dating experience.</p>
         <input type="text" id="apiKey" placeholder="Enter your OpenAI API Key">
+        <label for="genderPreference">Choose a personality:</label>
+        <select id="genderPreference">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
         <button onclick="startChat()">Start Chat</button>
     </div>
     <div id="chatbox" style="display: none;">
@@ -27,7 +32,7 @@
                 return;
             }
 
-            const genderPreference = prompt("Would you like to go on a date with a male or female personality?");
+            const genderPreference = document.getElementById("genderPreference").value;
             const initialMessage = {
                 role: "system",
                 content: `You are a ${genderPreference} personality for a blind date.`
@@ -35,20 +40,19 @@
 
             const chatbox = document.getElementById("chatbox");
             chatbox.style.display = "block";
-
-            const messages = document.getElementById("messages");
-            messages.innerHTML += `<div>User: ${initialMessage.content}</div>`;
         }
 
         async function sendMessage() {
             const userInput = document.getElementById("userInput").value;
             const apiKey = document.getElementById("apiKey").value;
+            const genderPreference = document.getElementById("genderPreference").value;
 
             const messages = document.getElementById("messages");
             messages.innerHTML += `<div>User: ${userInput}</div>`;
 
             const data = {
                 messages: [
+                    { role: "system", content: `You are a ${genderPreference} personality for a blind date.` },
                     { role: "user", content: userInput }
                 ]
             };
