@@ -1,49 +1,68 @@
+/* Main Styles for LoveBot Website */
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1b1b1b;
-    color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border: 2px solid #e74c3c;
-    box-shadow: 0 0 20px #e91e63;
+    background-color: #121212; /* Dark background for cyberpunk theme */
+    color: #ffffff; /* White text color */
 }
 
 h1 {
-    color: #e91e63;
     text-align: center;
-    text-shadow: 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63;
+    color: #ff00ff; /* Neon pink color for cyberpunk theme */
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #a2a2a2;
-}
-
-.btn {
-    display: block;
-    width: 200px;
-    height: 50px;
-    margin: 20px auto;
-    background-color: #e91e63;
     text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    line-height: 50px;
-    text-decoration: none;
-    text-shadow: 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63;
-    box-shadow: 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63;
+    margin: 20px 0;
 }
 
-.btn:hover {
-    background-color: #c0392b;
-    box-shadow: 0 0 10px #c0392b, 0 0 20px #c0392b, 0 0 30px #c0392b;
+div {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ff00ff; /* Neon pink border */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black background */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff00ff; /* Neon pink border */
+    border-radius: 5px;
+    background-color: #222222; /* Dark input field */
+    color: #ffffff; /* White text color */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff00ff; /* Neon pink background */
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff66ff; /* Lighter neon pink on hover */
+}
+
+#chatbox {
+    margin-top: 20px;
+}
+
+#messages {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #ff00ff; /* Neon pink border */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#messages p {
+    margin: 5px 0;
 }
