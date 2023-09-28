@@ -34,6 +34,7 @@
             
             // Set the initial system message
             const data = {
+                model: "gpt-3.5-turbo",  // <-- Added model parameter
                 messages: [
                     { role: "system", content: initialPrompt }
                 ]
@@ -50,9 +51,7 @@
                 });
 
                 if (!response.ok) {
-                    const errorData = await response.json(); // Get detailed error message from API
-                    console.error("API Error Response:", errorData); // Log the detailed error
-                    throw new Error(`API request failed with status ${response.status}: ${errorData.error.message}`);
+                    throw new Error(`API request failed with status ${response.status}`);
                 }
 
                 const result = await response.json();
@@ -72,6 +71,7 @@
             messages.innerHTML += `<div>User: ${userInput}</div>`;
 
             const data = {
+                model: "gpt-3.5-turbo",  // <-- Added model parameter
                 messages: [
                     { role: "user", content: userInput }
                 ]
@@ -88,9 +88,7 @@
                 });
 
                 if (!response.ok) {
-                    const errorData = await response.json(); // Get detailed error message from API
-                    console.error("API Error Response:", errorData); // Log the detailed error
-                    throw new Error(`API request failed with status ${response.status}: ${errorData.error.message}`);
+                    throw new Error(`API request failed with status ${response.status}`);
                 }
 
                 const result = await response.json();
