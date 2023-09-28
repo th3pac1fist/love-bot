@@ -50,7 +50,9 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
+                    const errorData = await response.json(); // Get detailed error message from API
+                    console.error("API Error Response:", errorData); // Log the detailed error
+                    throw new Error(`API request failed with status ${response.status}: ${errorData.error.message}`);
                 }
 
                 const result = await response.json();
@@ -86,7 +88,9 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
+                    const errorData = await response.json(); // Get detailed error message from API
+                    console.error("API Error Response:", errorData); // Log the detailed error
+                    throw new Error(`API request failed with status ${response.status}: ${errorData.error.message}`);
                 }
 
                 const result = await response.json();
