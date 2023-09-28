@@ -24,17 +24,28 @@
     </div>
 
     <script>
+        const backstories = [
+            "You grew up in a small town and always dreamt of big city lights. You went to school at the University of Iowa and studied marketing. Now, you work for a leading company in downtown Des Moines, IA.",
+            "You were born in a bustling city but always felt the call of the countryside. You attended the University of Texas and majored in computer science. Today, you're a software engineer in Austin, TX.",
+            "You hail from the sunny beaches of California. After attending UCLA and majoring in arts, you became a renowned artist with exhibitions across the country.",
+            "Growing up in the mountains of Colorado, you developed a love for nature. You studied environmental science at the University of Colorado Boulder and now work for a conservation NGO.",
+        ];
+
         async function startChat() {
             const apiKey = document.getElementById("apiKey").value;
             const gender = document.getElementById("genderPreference").value;
-            const initialPrompt = `You are a ${gender} personality for a blind date.`;
+            
+            // Select a random backstory
+            const randomBackstory = backstories[Math.floor(Math.random() * backstories.length)];
+            
+            const initialPrompt = `You are a ${gender} personality for a blind date. ${randomBackstory}`;
             
             // Display the chatbox
             document.getElementById("chatbox").style.display = "block";
             
             // Set the initial system message
             const data = {
-                model: "gpt-3.5-turbo",  // <-- Added model parameter
+                model: "gpt-3.5-turbo",
                 messages: [
                     { role: "system", content: initialPrompt }
                 ]
@@ -71,7 +82,7 @@
             messages.innerHTML += `<div>User: ${userInput}</div>`;
 
             const data = {
-                model: "gpt-3.5-turbo",  // <-- Added model parameter
+                model: "gpt-3.5-turbo",
                 messages: [
                     { role: "user", content: userInput }
                 ]
