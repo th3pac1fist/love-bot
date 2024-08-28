@@ -1,5 +1,7 @@
 body {
-    border: 5px solid red; /* This is just for testing */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0e6da;
 }
 
 .aisle {
@@ -21,13 +23,9 @@ body {
 
 .male {
     left: 45%;
-    /* Try these one at a time */
-    background: url('../../images/ryan.jpg') no-repeat center center; /* Relative path */
-    /* or */
-    background: url('/images/ryan.jpg') no-repeat center center; /* Root-relative path */
-    /* or if hosted locally */
-    background: url('images/ryan.jpg') no-repeat center center; /* Relative path from index.html */
-    background-size: contain;
+    /* Ensure this path is correct */
+    background: url('../../images/ryan.jpg') no-repeat center center;
+    background-size: contain; /* Adjusts the image to fit within the element */
 }
 
 .female {
