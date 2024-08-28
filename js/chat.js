@@ -4,6 +4,8 @@ document.addEventListener('keydown', function(event) {
     let malePosition = parseInt(window.getComputedStyle(male).getPropertyValue('bottom'));
     let femalePosition = parseInt(window.getComputedStyle(female).getPropertyValue('bottom'));
 
+    console.log(`Key pressed: ${event.key}`);
+
     if(event.key === 'ArrowUp') {
         male.style.bottom = malePosition + 10 + 'px';
         female.style.bottom = femalePosition + 10 + 'px';
