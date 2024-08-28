@@ -1,3 +1,5 @@
+console.log('JavaScript is loaded and running.');
+
 document.addEventListener('keydown', function(event) {
     const male = document.getElementById('male');
     const female = document.getElementById('female');
