@@ -22,7 +22,7 @@ body {
 .male {
     left: 45%;
     /* Try these one at a time */
-    background: url('../images/ryan.jpg') no-repeat center center; /* Relative path */
+    background: url('../../images/ryan.jpg') no-repeat center center; /* Relative path */
     /* or */
     background: url('/images/ryan.jpg') no-repeat center center; /* Root-relative path */
     /* or if hosted locally */
