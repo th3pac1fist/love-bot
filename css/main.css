@@ -1,7 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0e6da;
+    border: 5px solid red; /* This is just for testing */
 }
 
 .aisle {
